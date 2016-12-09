@@ -54,9 +54,10 @@ module PagseguroClient
 
     # Send a new payment request to Pagseguro
     # Returns the URL to redirect your user to complete the payment in Pagseguro
-    def send_request
+    def send_request(info = {})
+      rdata = info.is_a?(Hash) ? data.merge(info) : data
       begin
-        response = RestClient.post(PagseguroClient.checkout_url, data, {
+        response = RestClient.post(PagseguroClient.checkout_url, rdata, {
           :content_type => "application/x-www-form-urlencoded",
           :charset => "UTF-8"
         })

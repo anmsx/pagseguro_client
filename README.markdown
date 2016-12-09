@@ -55,7 +55,8 @@ Para realizar os testes de integração da sua aplicação com o gateway, você 
   id: "1", # Seu identificador do produto
   description: produto.descricao,
   amount: produto.preco)
-@response = order.send_request
+data = {} # dados adicionais
+@response = order.send_request(data)
 ```
 
 ### Exemplo de resposta da ordem de pagamento
@@ -148,6 +149,7 @@ O objeto `transaction` possui os seguintes métodos:
 * Raphael Costa (<http://raphaelcosta.net>)
 * André Kupkovski (<http://kupkovski.github.com>)
 * Heitor Salazar Baldelli (<http://www.woollu.com>)
+* E Silva
 
 ## Licença (MIT):
 
